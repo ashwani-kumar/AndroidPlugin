@@ -1,8 +1,6 @@
 # AndroidPlugin
 Android cordova plugin for communicating with wireless Zebra printers such as iMZ220, Qnlp320 etc.
 
-Cordova plugin for Zebra ZPL printers:
-
 1. Dicsover printers:
 	this.discoverPrinters = function(){
             var def = $q.defer();
@@ -13,8 +11,7 @@ Cordova plugin for Zebra ZPL printers:
                 return def.promise;
             }
             $window.plugins.printerInterface.discoverPrinters(mobile.ipAddress, function (result) {
-                    console.log("discovery result " +
-                        result);
+                    console.log("discovery result " +result);
                     var keys = Object.keys(result);
                     if(keys[0] == Config.printerMsgs.DISCOVERY_FINISHED){
                         Config.printerDetails.printerCount = result[Config.printerMsgs.DISCOVERY_FINISHED];
